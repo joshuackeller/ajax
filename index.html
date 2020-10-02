@@ -19,6 +19,15 @@ Suggestion: <span id="txtHint">Empty</span>
     event.preventDefault();
     document.getElementById("txtHint").innerHTML=
       document.getElementById("cityField").value;
+      const url = "staticCity.txt";
+fetch(url)
+  .then(function(response) {
+    return response.json();
+  }).then(function(json) {
+    console.log(json);
+    console.log(json[0]);
+    console.log("Got "+json[0].city);
+  });
 });
 </script>
 </body>
